@@ -16,7 +16,7 @@ app.use(bp.json());
 app.use(cors());
 
 console.log(process.env.MONGO_ATLAS_PWD);
-mongoose.connect("mongodb+srv://qnauser:qna123@quizerr.lmept.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+mongoose.connect(process.env.MONGO_URI || "mongodb+srv://qnauser:qna123@quizerr.lmept.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
     useUnifiedTopology:true,
     useNewUrlParser:true,
     useCreateIndex: true,
